@@ -1,0 +1,273 @@
+/* normalize */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 4%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+.navlist{
+    display: flex;
+}
+
+.navlist a{
+    margin-left: 60px;
+    font-weight: 400;
+    font-size: 17px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease;
+
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid black;
+}
+
+#menu-icon{
+    display: none;
+}
+
+#menu-icon{
+    font-size: 17px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon-action{
+    display: none;
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right,#F5F5F5 0%, #F2EAD3 25%, #DFD7BF 50%, #3f2305bd 75%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+section{
+    padding: 0 8%;
+
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1{
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.hero-text p {
+    font-family: "Playfair Display", serif;
+    font-size: 90%;
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-image img{
+    width: 500px;
+    border: 3px solid #3f2305bd;
+    border-radius: 50px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 4s linear;
+}
+
+.hero-image img:hover {
+    width: 550px;
+    opacity: 0.6;
+
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #d87a16bd;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid black;
+    transform: translateX(8px);
+
+
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 25px 0;
+    font-size: 30px;
+    transition: all 1s ease;
+}
+
+.icons i:hover{
+    border: 1px solid black;
+    border-radius: 30px;
+    transform: translateX(5px);
+    font-size: 35px;
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6vh;
+    right: 5vh;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 10px;
+    color: black;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.135);
+    transition: all 1.5s ease;
+}
+
+.scroll-down i:hover{
+    font-size: 40px;
+    background-color: white;
+    transform: translateY(-40%);
+}
+
+@media (max-width: 992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-image{
+        text-align: center;
+    }
+
+    .hero-image img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p{
+        font-size: 70%;
+    }
+   
+    .scroll-down{
+        display: none;
+    }
+
+    .icons{
+        display: none;
+
+    }
+}
+
+@media (max-width: 768px){
+    
+    .menu-icon-action{
+        display: block;
+    }
+    
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+
+    }
+
+    .hero-image img{
+        margin: 0;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #d0a16e40;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .7s ease-out;
+    }
+
+    .navlist a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+
+    }
+}
